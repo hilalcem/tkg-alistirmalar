@@ -12,7 +12,11 @@
 # - Ortalama 50 veya üstü VE final 50 veya üstüyse "Geçti", değilse "Kaldı" döndürür.
 # Örnek: vize_final_sonuc(30, 70) -> "Geçti"   (ortalama 54, final 70)
 def vize_final_sonuc(vize, final):
-    pass
+    ortalama = vize * 0.4 + final * 0.6
+    if ortalama >= 50 and final >= 50:
+        return "Geçti"
+    return "Kaldı"
+
 
 
 # 2. Asal sayı mı?
@@ -20,7 +24,12 @@ def vize_final_sonuc(vize, final):
 # - 0 ve 1 asal değildir; 2 asaldır.
 # Örnek: asal_mi(7) -> True, asal_mi(9) -> False
 def asal_mi(n):
-    pass
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 
 # 3. Palindrom mu?
@@ -29,7 +38,9 @@ def asal_mi(n):
 # İpucu: metin.lower() küçük harfe çevirir, metin.replace(" ", "") boşlukları siler.
 # Örnek: palindrom_mu("Kek") -> True, palindrom_mu("Ey Edip Adanada pide ye") -> True
 def palindrom_mu(metin):
-    pass
+    metin = metin.replace(" ", "").lower()
+    ters_metin = metin[::-1]
+    return metin == ters_metin
 
 
 # 4. En uzun kelime
@@ -39,7 +50,14 @@ def palindrom_mu(metin):
 # İpucu: cumle.split() cümleyi kelimelerin listesine böler.
 # Örnek: en_uzun_kelime("bugün hava çok güzel") -> "bugün"
 def en_uzun_kelime(cumle):
-    pass
+    if len(cumle) == 0:
+        return ""
+    kelimeler = cumle.split()
+    en_uzun = kelimeler[0]
+    for kelime in kelimeler:
+        if len(kelime) > len(en_uzun):
+            en_uzun = kelime
+    return en_uzun
 
 
 # 5. En düşük not (HATALI: bulun ve düzeltin)
@@ -48,7 +66,7 @@ def en_uzun_kelime(cumle):
 def en_dusuk_not(notlar):
     if len(notlar) == 0:
         return None
-    en_dusuk = 0
+    en_dusuk = notlar[0]
     for n in notlar:
         if n < en_dusuk:
             en_dusuk = n
@@ -60,6 +78,6 @@ def en_dusuk_not(notlar):
 # Örnek: toplam(5) -> 15
 def toplam(n):
     sonuc = 0
-    for i in range(1, n):
+    for i in range(1, n + 1):
         sonuc = sonuc + i
     return sonuc

@@ -8,6 +8,8 @@ Her `push` yaptığınızda GitHub Actions testleri sizin yerinize çalıştır�
 |---|---|---|
 | [hafta02](hafta02/) | Python temelleri: fonksiyonları siz yazın | `alistirma.py` |
 | [hafta03](hafta03/) | pytest: testleri siz yazın | `test_alistirma.py` |
+| [hafta04](hafta04/) | Lab: Python ve test karma alıştırma | `bolum1.py`, `test_bolum2.py` |
+| [hafta05](hafta05/) | Kapsam ve parametrize: testleri siz yazın | `test_alistirma.py` |
 
 ## Dönem başında bir kez
 
@@ -34,14 +36,16 @@ Her `push` yaptığınızda GitHub Actions testleri sizin yerinize çalıştır�
 2. **Alıştırmayı yapın.** O haftanın klasörüne girip yukarıdaki tabloda yazan dosyayı düzenleyin.
    Kendi bilgisayarınızda deneyin:
    ```bash
-   cd hafta03
+   cd hafta04
    python -m pip install pytest
    python -m pytest -v
    ```
+   Klasörde `requirements.txt` varsa o haftanın ek paketlerini de kurun:
+   `python -m pip install -r requirements.txt`
 3. **Commit'leyip gönderin.**
    ```bash
    git add .
-   git commit -m "hafta03 alıştırması"
+   git commit -m "hafta04 alıştırması"
    git push
    ```
 4. **Sonucu görün.** Fork'unuzun **Actions** sekmesinde her hafta ayrı bir satırdır.

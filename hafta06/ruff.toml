@@ -1,0 +1,11 @@
+# Bu haftanın ruff ayarları. Bu dosyayı DEĞİŞTİRMEYİN.
+# Klasörde "ruff check" ve "ruff format" çalıştırınca bu ayarlar kullanılır.
+# test_stil.py de aynı ayarlarla kontrol eder.
+line-length = 88
+output-format = "concise"
+
+[lint]
+select = ["E", "W", "F", "B", "N", "SIM", "C90", "I"]
+
+[lint.mccabe]
+max-complexity = 5
